@@ -34,7 +34,7 @@ async function render(v,canvas){const c=canvas.getContext('2d');c.clearRect(0,0,
 // Username and password, matching the sample's top-left area
 text(c,`USER: ${v.user}`,24,82,27,'#111','400');text(c,`PASS: ${v.pass}`,24,126,27,'#111','400');
 // QR stays inside the template's dashed square
-const qr=await makeQR(qrData(v));c.fillStyle='#fff';c.fillRect(27,175,235,235);c.drawImage(qr,31,179,227,227);
+const qr=await makeQR(qrData(v));c.fillStyle='#fff';c.fillRect(27,175,235,235);c.drawImage(qr,31,179,227,227);c.fillStyle='#fff';c.fillRect(10,420,265,80);text(c,'Or browse to:',24,450,17,'#111','400');text(c,'http://deespacio.net',24,478,17,'#111','400');
 // Right-side information block, positioned to match sample
 text(c,'Profile:',518,290,25,'#00a3e8','400');text(c,v.profile,518,322,23,'#111','400');text(c,'Download Rates:',518,350,24,'#00a3e8','400');text(c,v.rate,518,380,23,'#111','400');text(c,'Shared:',518,408,24,'#00a3e8','400');text(c,v.shared,518,438,23,'#111','400');
 return canvas}
